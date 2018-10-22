@@ -1,3 +1,15 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Convolution2D, Dropout, Dense, Flatten, LSTM
+from tensorflow.keras.models import Sequential, save_model
+from tensorflow.keras.utils import to_categorical
+from scipy.io import loadmat
+import pickle
+import argparse
+from tensorflow import keras
+import numpy as np
+
 def load_data(mat_file_path, width=28, height=28, max_=None, verbose=True):
     # Local functions
     def rotate(img):
